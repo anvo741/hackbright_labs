@@ -4,7 +4,7 @@
 def add(num1, num2):
     """Return the sum of the two inputs."""
 
-    return num1 + num2
+    return float(num1 + num2)
 
 
 def subtract(num1, num2):
@@ -34,11 +34,21 @@ def power(num1, num2):
 def mod(num1, num2):
     """Return the remainder of num1 / num2."""
 
-# prompt user (blank)
 user_entry = input()
 
+problem = user_entry.split(' ') #creates a list of strings
+
+def calculator(problem):
+    if problem[0] == '+':
+        return add(int(problem[1]), int(problem[2]))
+
+print(calculator(problem))
 # get mathematical operator and numbers from user input
 
+
+
+#if operator == '+':
+ #   print(add(num1, num2))
 # map operators to their function
 # call the right function
 # return correct value in float
