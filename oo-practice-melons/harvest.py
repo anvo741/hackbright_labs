@@ -107,7 +107,7 @@ class Melon(object):
 def make_melons(melon_types):
     """Returns a list of Melon objects."""
     melon_list = []
-    melons_by_id = make_melon_type_lookup(melon_types())
+    melons_by_id = make_melon_type_lookup(melon_types)
 
     melon_1 = Melon(melons_by_id['yw'], 8, 7, 2, 'Sheila')
     melon_list.append(melon_1)
@@ -141,7 +141,12 @@ def make_melons(melon_types):
 def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
 
-    # Fill in the rest 
+    for melon in melons:
+        if melon.is_sellable(): 
+            sell_status = 'CAN BE SOLD' 
+        else: 
+            sell_status = 'NOT SELLABLE'
+        print(f'Harvested by {melon.harvester} from Field {melon.harvest_field} ({sell_status})')
 
 
 
