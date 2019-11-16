@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <title>Madlib</title>
+</head>
+<body>
+    Once upon a time, there was a {{ adjective }}, 
+    {% for color in colors %}
+    {% if color != colors[-1] %}
+        {{ color }},
+    {% else %}
+        {{ color }} 
+    {% endif %}
+    {% endfor %}
+    {{ noun }} named {{ person }}.
+</body>
+</html>
