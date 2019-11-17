@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Base</title>
+    <title>{% block title %} Base {% endblock %}</title>
 </head>
 <body>
-    Hi, you're very {{ compliment }}
+    Hi {{ person }}! I think you're 
+    {% for compliment in compliments %}
+    {% if compliment != compliments[-1] %}
+    {{ compliment }},
+    {% else %}
+    and {{compliment}}!
+    {% endif %}
+    {% endfor %}
+
+    {% block content %} Content {% endblock %}
 </body>
 </html>
